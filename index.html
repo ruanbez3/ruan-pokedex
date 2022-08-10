@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/pikachu_icon-icons.com_67535.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <script defer src="script.js"></script> -->
+    <script src="./scripts/theme.js"></script>
+    <script defer src="script2.js"></script>
+    <title>Pokemon Cards</title>
+</head>
+<body class="body">
+    <div id="heading-container">
+        <div id="pokemon_logo">
+        <img src="./images/Pokemon-Logo-PNG-Pic.png" alt="Pokemon Logo">
+        </div>
+        <div id="pokedex-text">
+        <h1 style="color: #ffcb05; padding: 1rem;" id="pokedex_heading">Pokedex</h1>
+        </div>
+    </div>
+
+    <div class="scroll-move">
+    <div class="navbar">
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://www.pokemon.com/us/" target="_blank">Pokemon Page</a></li>
+            <li><a href="https://www.pokemon.com/us/pokemon-news/" target="_blank">News</a></li>
+        </ul>
+    </nav>
+    </div>
+   
+    <div class="user-input">
+    <input type="text" id="search" class="input" placeholder="Search Pokemons" onkeyup="searchPokemon(pokemonArray, searchFor.value)">
+    <button type="reset" id="resetPage" class="input" onclick="refreshPage()">Reset</button>
+    <button type="button" id="colour-theme" onclick="toggleDarkMode()">Light</button>
+
+    <select name="Sort" id="sort" class="input" onchange="sortSelectorChanged(event)">
+        <option value="<">Lowest number first</option>
+        <option value=">">Highest number first</option>
+    </select>
+    </div>
+    </div>
+
+    <section class="card-section">
+    <div class="card-container">
+        <!-- Cards to display -->
+    </div>
+    </section>
+</body>
+</html>

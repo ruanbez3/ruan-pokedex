@@ -1,0 +1,59 @@
+// await pokes.forEach(async (poke) => {
+        // let pokeName = poke.name
+        // pokemon = await getPokemonInfo(poke.url)
+        // console.log(pokemon)
+
+        // cardElements += 
+        //         `<article class="card">
+        //         <span><img src="${""}" alt="Alt"></span>
+        //         <span>ID</span>
+        //         <span>${poken.name}</span>
+        //         <span>Email</span>
+        //         </article>`
+        
+    // });
+
+    // Loop through array of pokemons
+    for (let i = 0; i < pokemonArray.length; i++) {
+        let pokeName = pokemonArray[i].name.toUpperCase()
+        // pokeName.includes(search)
+        // search.toUpperCase() === pokeName
+        if (search.toUpperCase() === pokeName) {
+            // let pokemon = await getPokemonInfo(pokemonArray[i].url)
+
+            // cardElements += 
+            //     `<article class="card">
+            //     <span><img src="${pokemon.sprites.back_default}" alt="Alt"></span>
+            //     <span>ID: ${pokemon.id}</span>
+            //     <span>${pokemon.name}</span>
+            //     <span>${pokemon.weight}</span>
+            //     </article>`
+                
+            cardElements += await getCardElements(pokemonArray[i].url)
+        } 
+    } 
+
+    // Function to add pokemon cards to DOM
+async function addPokesToDOM(pokes) {
+    let cardElements = ""
+
+    for (const poke of pokes) {
+        let pokeName = poke.name
+        pokeName = pokeName.toUpperCase()
+        // pokemon = await getPokemonInfo(poke.url)
+
+        // // InnerHTML
+        // // <a href="https://www.pokemon.com/us/pokedex/${pokeName}" id="card-link</a>">
+        // cardElements += 
+        //         `<article class="card">
+        //         <span><img src="${pokemon.sprites.back_default}" alt="Alt"></span>
+        //         <span>ID: ${pokemon.id}</span>
+        //         <span>${pokeName}</span>
+        //         <span>${pokemon.weight}</span>
+        //         </article>`
+
+        cardElements += await getCardElements(poke.url)
+    }
+    
+    cardContainer.innerHTML += cardElements
+}
