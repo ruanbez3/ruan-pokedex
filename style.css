@@ -1,0 +1,183 @@
+:root {
+    --pokemonYellow: #ffcb05;
+    --pokemonBlue: #2a75bb;
+    --backgroundLight: #f8fbf8;
+    --backgroundDark: #343434;
+    --cardLight: rgb(236, 236, 236);
+    --cardDark: #28282B;
+    --navLight: var(--cardLight);
+    --navDark: var(--cardDark);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--backgroundLight);
+}
+
+body.dark {
+    background-color: var(--backgroundDark);
+}
+
+#heading-container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+#pokemon_logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+#pokedex_heading:hover {
+    text-shadow: 1px 1px 1px red,
+    2px 2px 1px red;
+}
+
+.scroll-move {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar {
+    background-color: var(--navLight);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar.dark {
+    background-color: var(--navDark);
+}
+
+.navbar ul{
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li a{
+    margin: .5rem;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar ul li a.dark {
+    background-color: var(--navDark);
+    color: whitesmoke;
+}
+
+.navbar ul li a:hover {
+    color: var(--pokemonBlue);
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+}
+
+.user-input {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.user-input .input {
+    margin: 0 .5rem 0 .5rem;
+}
+
+button {
+    background-color: var(--pokemonYellow);
+    color: var(--pokemonBlue);
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: var(--pokemonBlue);
+    color: var(--pokemonYellow);
+}
+
+button:active {
+    background-color: red;
+    color: var(--pokemonBlue);
+}
+
+button #colour-theme {
+    text-transform: capitalize;
+}
+
+.card-section {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.card-container {
+    display: inline-block;
+}
+
+.pokemon-link {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    background-color: var(--backgroundLight);
+    display: inline-grid;
+    margin: .5rem;
+    height: 17rem;
+    width: 12rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px -6px rgba(0,0,0,0.9);
+    border-style: none;
+}
+
+.card.dark {
+    background-color: var(--backgroundDark);
+}
+
+#card-link {
+    text-decoration: none;
+    color: black;
+}
+
+span {
+    padding: 0 0 0 1rem;
+    font-size: 10pt;
+}
+
+#pokemon_id {
+    color: gray;
+}
+
+#pokemon_name {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 12pt;
+}
+
+#pokemon_name.dark {
+    color: whitesmoke;
+    background-color: var(--backgroundDark);
+}
+
+#pokemon_type {
+    text-transform: capitalize;
+    font-size: 10pt;
+    background-color: var(--pokemonYellow);
+    color: var(--pokemonBlue);
+    border-radius: 5px;
+    height: 1rem;
+    width: fit-content;
+}
+
+#pokemon_type:hover {
+    background-color: var(--pokemonBlue);
+    color: var(--pokemonYellow);
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px -2px var(--pokemonBlue);
+    transform: scale(1.01) translateY(-1%);
+}
